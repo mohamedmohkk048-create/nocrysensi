@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoCry Empire Tournament</title>
+<style>
+:root{--gold:#e9b943;--bg:#090909;--card:#151515}
+*{box-sizing:border-box}
+body{
+ margin:0;background:var(--bg);color:white;
+ font-family:Arial,sans-serif;line-height:1.7
+}
+header{
+ background:linear-gradient(135deg,#090909,#332407);
+ padding:35px 15px;text-align:center;
+ border-bottom:2px solid var(--gold)
+}
+.logo{font-size:32px;color:var(--gold);font-weight:900}
+nav{
+ display:flex;justify-content:center;gap:18px;
+ flex-wrap:wrap;padding:15px;background:#111;
+ position:sticky;top:0;z-index:5
+}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:var(--gold)}
+.hero{text-align:center;padding:55px 15px}
+.hero h1{font-size:34px;color:var(--gold)}
+.hero p{color:#bbb}
+.btn{
+ display:inline-block;background:var(--gold);
+ color:#111;padding:12px 22px;border-radius:8px;
+ text-decoration:none;font-weight:bold;border:0;
+ cursor:pointer;margin:5px
+}
+.btn.secondary{background:#292929;color:white;border:1px solid #555}
+.container{max-width:950px;margin:auto;padding:15px}
+.section{margin:35px 0}
+.section h2{color:var(--gold);text-align:center}
+.cards{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+ gap:14px
+}
+.card{
+ background:var(--card);border:1px solid #49391c;
+ padding:20px;border-radius:13px;text-align:center
+}
+.number{font-size:25px;color:var(--gold);font-weight:bold}
+table{width:100%;border-collapse:collapse;background:var(--card)}
+th,td{padding:12px;text-align:center;border-bottom:1px solid #333}
+th{color:var(--gold)}
+.table-wrap{overflow-x:auto;border-radius:10px}
+.badge{color:#70df9c}
+.rules{background:#151515;padding:20px;border-radius:12px}
+footer{
+ text-align:center;padding:25px;margin-top:40px;
+ border-top:1px solid #49391c;color:#999
+}
+@media(max-width:500px){
+ .hero h1{font-size:26px}
+ nav{gap:12px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="logo">👑 NOCRY EMPIRE</div>
+ <div>FREE FIRE ESPORTS</div>
+</header>
+
+<nav>
+ <a href="#home">الرئيسية</a>
+ <a href="#tournament">البطولة</a>
+ <a href="#register">التسجيل</a>
+ <a href="#ranking">الترتيب</a>
+ <a href="#rules">القوانين</a>
+</nav>
+
+<section class="hero" id="home">
+ <h1>NOCRY EMPIRE TOURNAMENT</h1>
+ <p>هل أنت مستعد لإثبات قوتك والفوز بالبطولة؟</p>
+ <a class="btn" href="#register">سجل فريقك الآن</a>
+ <a class="btn secondary" href="#ranking">شاهد الترتيب</a>
+</section>
+
+<main class="container">
+
+<section class="section" id="tournament">
+ <h2>🏆 البطولة القادمة</h2>
+ <div class="cards">
+  <div class="card">
+   <div class="number">FREE FIRE</div>
+   <p>اللعبة</p>
+  </div>
+  <div class="card">
+   <div class="number">SQUAD</div>
+   <p>نظام اللعب</p>
+  </div>
+  <div class="card">
+   <div class="number">4 PLAYERS</div>
+   <p>عدد اللاعبين</p>
+  </div>
+  <div class="card">
+   <div class="number">TBA</div>
+   <p>موعد البطولة</p>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="register">
+ <h2>👥 تسجيل الفرق</h2>
+ <div class="card">
+  <p>هل تريد المشاركة في بطولة NoCry Empire؟</p>
+  <p>جهّز اسم فريقك وبيانات اللاعبين الأربعة.</p>
+  <a class="btn" id="formLink" href="https://docs.google.com/forms/" target="_blank">
+   REGISTER YOUR TEAM
+  </a>
+  <p style="color:#aaa;font-size:13px">
+   التسجيل لا يصبح مؤكداً إلا بعد مراجعة الإدارة.
+  </p>
+ </div>
+</section>
+
+<section class="section" id="ranking">
+ <h2>🥇 LEADERBOARD</h2>
+ <div class="table-wrap">
+ <table>
+  <thead>
+   <tr>
+    <th>المركز</th>
+    <th>الفريق</th>
+    <th>النقاط</th>
+    <th>القتلات</th>
+   </tr>
+  </thead>
+  <tbody id="teams"></tbody>
+ </table>
+ </div>
+</section>
+
+<section class="section">
+ <h2>📅 مواعيد البطولة</h2>
+ <div class="card">
+  <p>التسجيل: <span class="gold">يحدد لاحقاً</span></p>
+  <p>بداية البطولة: <span class="gold">يحدد لاحقاً</span></p>
+  <p>إعلان النتائج: <span class="gold">يحدد لاحقاً</span></p>
+ </div>
+</section>
+
+<section class="section" id="rules">
+ <h2>📜 قوانين البطولة</h2>
+ <div class="rules">
+  <p>1. احترام جميع اللاعبين والإدارة.</p>
+  <p>2. يمنع استعمال أدوات الغش.</p>
+  <p>3. الالتزام بموعد المباراة.</p>
+  <p>4. يمنع إزعاج الفرق الأخرى.</p>
+  <p>5. قرارات الإدارة نهائية.</p>
+ </div>
+</section>
+
+<section class="section">
+ <div class="card">
+  <h2>💬 JOIN OUR DISCORD</h2>
+  <p>انضم إلى مجتمع NoCry Empire.</p>
+  <a class="btn" id="discordLink" href="https://discord.com/" target="_blank">
+   JOIN DISCORD
+  </a>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ NOCRY EMPIRE © 2026
+ <p>ALL RIGHTS RESERVED</p>
+</footer>
+
+<script>
+// غيّر الفرق والنقاط عند تحديث النتائج
+const teams = [
+ {name:"Team Alpha",points:0,kills:0},
+ {name:"Team Beta",points:0,kills:0},
+ {name:"Team Gamma",points:0,kills:0}
+];
+
+teams.sort((a,b)=>b.points-a.points);
+
+document.getElementById("teams").innerHTML =
+ teams.map((t,i)=>`
+ <tr>
+  <td>${i+1}</td>
+  <td>${t.name}</td>
+  <td>${t.points}</td>
+  <td>${t.kills}</td>
+ </tr>
+ `).join("");
+</script>
+
+</body>
+</html>
